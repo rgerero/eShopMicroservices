@@ -7,6 +7,7 @@
     <UserSecretsId>bd7fad20-ef48-4619-aa83-4685c8781864</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Products\GetProducts\" />
     <Folder Include="Products\UpdateProduct\" />
   </ItemGroup>
 
