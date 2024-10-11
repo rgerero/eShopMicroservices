@@ -8,3 +8,13 @@
 **Mapster** - is a high-performance object-to-object mapping library for .NET, designed to map data between different object types (e.g., DTOs and domain models) with minimal configuration
 
 **Marten** - an ORM that leverages Postgre's JSON and transform into .NET transactional document DB.
+
+#Docker Commands
+docker compose up
+docker exec -it 4f6f528741cc bash
+
+#bash command to access postgress
+psql -U postgres
+\l - list tables
+\c <DNName> - go to db
+\d
