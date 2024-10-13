@@ -1,7 +1,4 @@
-﻿
-using Catalog.API.Products.CreateProduct;
-
-namespace Catalog.API.Products.UpdateProduct
+﻿namespace Catalog.API.Products.UpdateProduct
 {
 	public record UpdateProductRequest(Guid Id, string Name, List<string> Category, string Description, string ImageFile, decimal price);
 	public record UpdateProductResponse(bool IsSuccess);

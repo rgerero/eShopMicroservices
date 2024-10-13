@@ -1,6 +1,5 @@
 ﻿
 using Catalog.API.Exceptions;
-using Catalog.API.Products.GetProductById;
 
 namespace Catalog.API.Products.GetProductByCategory
 {

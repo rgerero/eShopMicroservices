@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Catalog.API.Products.CreateProduct
+﻿namespace Catalog.API.Products.CreateProduct
 {
 	public record CreateProductCommand(string Name, List<string> Category, string Description, string ImageFile, decimal price)
 		: ICommand<CreateProductResult>;
@@ -17,18 +15,12 @@ namespace Catalog.API.Products.CreateProduct
 			RuleFor(x => x.price).GreaterThan(0).WithMessage("Price must be greater than 0");
 		}
 	}
-	internal class CreateProductCommandHandler(IDocumentSession session, IValidator<CreateProductCommand> validator) 
+	internal class CreateProductCommandHandler(IDocumentSession session, ILogger<CreateProductCommandHandler> logger) 
 		: ICommandHandler<CreateProductCommand, CreateProductResult>
 	{
 		public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
 		{
-			var result=await validator.ValidateAsync(command, cancellationToken);
-			var error=result.Errors.Select(x=>x.ErrorMessage).ToList();
-			if (error.Any())
-			{
-				throw new ValidationException(error.FirstOrDefault());
-			}
-
+			logger.LogInformation("CreateProductCommandHandler.Handle called with {@Query}", command);
 			var product = new Product
 			{
 				Name = command.Name,

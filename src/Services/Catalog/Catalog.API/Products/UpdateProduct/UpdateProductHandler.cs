@@ -1,5 +1,4 @@
 ﻿using Catalog.API.Exceptions;
-using Catalog.API.Products.CreateProduct;
 
 namespace Catalog.API.Products.UpdateProduct
 {

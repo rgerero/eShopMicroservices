@@ -1,8 +1,4 @@
-﻿
-using Catalog.API.Products.GetProductById;
-using Catalog.API.Products.GetProducts;
-
-namespace Catalog.API.Products.GetProductByCategory
+﻿namespace Catalog.API.Products.GetProductByCategory
 {
 	public record GetProductByCategoryResponse(IEnumerable<Product> Products);
 	public class GetProductByCategoryEndpoint : ICarterModule
