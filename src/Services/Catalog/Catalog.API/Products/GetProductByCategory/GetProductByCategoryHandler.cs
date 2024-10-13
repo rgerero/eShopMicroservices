@@ -14,10 +14,10 @@ namespace Catalog.API.Products.GetProductByCategory
 
 			var products = await session.Query<Product>().ToListAsync(cancellationToken);
 
-			if (products == null)
-			{
-				throw new ProductNotFoundException();
-			}
+			//if (products == null)
+			//{
+			//	throw new ProductNotFoundException();
+			//}
 
 			return new GetProductByCategoryResult(products);
 		}
