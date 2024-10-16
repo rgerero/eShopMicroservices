@@ -36,7 +36,7 @@ namespace BuildingBlocks.Exceptions.Handler
 				(
 					exception.Message,
 					exception.GetType().Name,
-					context.Response.StatusCode = StatusCodes.Status400BadRequest
+					context.Response.StatusCode = StatusCodes.Status404NotFound
 				),
 				_ =>
 				(
@@ -48,9 +48,10 @@ namespace BuildingBlocks.Exceptions.Handler
 
 			var problemDetails = new ProblemDetails
 			{
-				Title = exception.Message,
-				Status = StatusCodes.Status500InternalServerError,
-				Detail = exception.StackTrace
+				Title = details.Title,
+				Status = details.StatusCode,
+				Detail = details.Detail,
+				Instance = context.Request.Path
 			};
 
 			problemDetails.Extensions.Add("traceId",context.TraceIdentifier);
