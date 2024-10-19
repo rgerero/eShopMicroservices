@@ -1,6 +1,6 @@
 # eShopMicroservices
 
-# tools
+# Tools
 **MediatR** - .NET library that implements the Mediator design pattern, which promotes loose coupling between objects by ensuring they interact through a mediator rather than directly.
 
 **Carter** - is a lightweight and simple library for building modular and minimal APIs in ASP.NET Core
@@ -9,7 +9,12 @@
 
 **Marten** - an ORM that leverages Postgre's JSON and transform into .NET transactional document DB.
 
-#Docker Commands
+# APIs
+**Catalog.API** - Vertical Slice architecture + CQRS, Postgre, BRUD operations
+
+**Basket.API** - Vertical Slice architecture + CQRS & Repository pattern, Redis, Postgre, CRUD & gRPC operations
+
+# Docker Commands
 docker compose up
 docker exec -it 4f6f528741cc bash
 
