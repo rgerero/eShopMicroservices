@@ -11,7 +11,7 @@
 			//to do:
 			//get data in the database
 
-			return new GetBasketResult(new ShoppingCart());
+			return new GetBasketResult(new ShoppingCart("swn"));
 		}
 	}
 }

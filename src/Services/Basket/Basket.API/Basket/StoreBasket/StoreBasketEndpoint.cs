@@ -6,9 +6,9 @@
 	{
 		public void AddRoutes(IEndpointRouteBuilder app)
 		{
-			app.MapGet("/basket", async (StoreBasketRequest request, ISender sender) =>
+			app.MapPost("/basket", async (StoreBasketRequest request, ISender sender) =>
 			{
-				var command=request.Adapt<StoreBasketCommand>();
+				var command = request.Adapt<StoreBasketCommand>();
 				var result = await sender.Send(command);
 				var response = result.Adapt<StoreBasketResponse>();
 
