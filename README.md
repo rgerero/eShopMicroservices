@@ -14,6 +14,9 @@
 
 **Basket.API** - Vertical Slice architecture + CQRS & Repository pattern, Redis, Postgre, CRUD & gRPC operations
 
+**Discount.API** - n-tier architecture + EF Core + SQlite & gRPC operations
+Add-Migration InitialCreate
+
 # Docker Commands
 docker compose up
 docker exec -it 4f6f528741cc bash
