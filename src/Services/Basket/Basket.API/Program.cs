@@ -1,4 +1,5 @@
 using Discount.Grpc;
+using System.Security.Cryptography.Xml;
 
 var builder = WebApplication.CreateBuilder(args);
 var assembly = typeof(Program).Assembly;
@@ -29,7 +30,16 @@ builder.Services.AddStackExchangeRedisCache(options =>{
 //grpc services
 builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(opts =>
 {
-	opts.Address = new Uri(builder.Configuration["GrpcSettings;DiscountUrl"]!);
+	opts.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
+})
+//this bypassing of ssl cert is for development purposes only.	
+.ConfigurePrimaryHttpMessageHandler(() =>
+{
+	var handler = new HttpClientHandler
+	{
+		ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+	};
+	return handler;
 });
 
 //cross-cutting services
