@@ -1,6 +1,4 @@
-﻿using System.Net.Mail;
-
-namespace Ordering.Domain.ValueObjects
+﻿namespace Ordering.Domain.ValueObjects
 {
 	public record Payment
 	{
