@@ -16,6 +16,11 @@
 
 **Discount.API** - n-tier architecture + EF Core + SQlite & gRPC operations
 Add-Migration InitialCreate
+Update-Database
+
+**Ordering.API** - DDD/Clean architecture + EF Core + SQLServer & gRPC operations
+Add-Migration InitialCreate -OutputDir Data/Migrations -Project Ordering.Infrastructure -StartupProject Ordering.API
+Update-Database
 
 # Docker Commands
 docker compose up
