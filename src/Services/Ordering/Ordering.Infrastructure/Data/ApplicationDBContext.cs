@@ -1,8 +1,9 @@
-﻿using System.Reflection;
+﻿using Ordering.Application.Data;
+using System.Reflection;
 
 namespace Ordering.Infrastructure.Data
 {
-	public class ApplicationDBContext : DbContext
+	public class ApplicationDBContext : DbContext, IApplicationDbContext
 	{
 		public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options) { }
 
