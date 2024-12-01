@@ -2,7 +2,6 @@
 using Ordering.Application.Data;
 using Ordering.Application.Dtos;
 using Ordering.Application.Exceptions;
-using Ordering.Application.Orders.Commands.CreateOrder;
 using Ordering.Domain.Models;
 using Ordering.Domain.ValueObjects;
 
