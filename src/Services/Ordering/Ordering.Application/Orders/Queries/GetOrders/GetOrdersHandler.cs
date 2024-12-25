@@ -10,7 +10,7 @@ namespace Ordering.Application.Orders.Queries.GetOrders
 		public async Task<GetOrdersResult> Handle(GetOrdersQuery query, CancellationToken cancellationToken)
 		{
 			var pageIndex=query.PaginationRequest.PageIndex;
-			var pageSize=query.PaginationRequest.PaeSize;
+			var pageSize=query.PaginationRequest.PageSize;
 
 			var totalCount = await dbContext.Orders.LongCountAsync(cancellationToken);
 
