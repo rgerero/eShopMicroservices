@@ -1,3 +1,4 @@
+using BuildingBlocks.Messaging.MassTransit;
 using Discount.Grpc;
 using System.Security.Cryptography.Xml;
 
@@ -41,6 +42,9 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
 	};
 	return handler;
 });
+
+//async communication service
+builder.Services.AddMessageBroker(builder.Configuration);
 
 //cross-cutting services
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
