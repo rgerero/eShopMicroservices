@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //app services to the cotainer
 builder.Services
-	.AddApplicationServices()
+	.AddApplicationServices(builder.Configuration)
 	.AddInfrastructureServices(builder.Configuration)
 	.AddAPIServices(builder.Configuration);
 
